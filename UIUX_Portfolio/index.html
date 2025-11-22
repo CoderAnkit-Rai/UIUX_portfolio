@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI/UX Portfolio - Hospital System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">UI/UX Portfolio</div>
+            <ul class="nav-menu">
+                <li><a href="#intro">About</a></li>
+                <li><a href="#hospital-system">Hospital System</a></li>
+                <li><a href="#personas">User Personas</a></li>
+                <li><a href="#heuristic">Heuristic Evaluation</a></li>
+                <li><a href="#low-fidelity">Low Fidelity</a></li>
+                <li><a href="#high-fidelity">High Fidelity</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <section id="intro" class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1>Hello, I'm <span class="highlight">Ankit Rai</span></h1>
+                    <p class="intro-subtitle">UI/UX Designer & Developer</p>
+                    <p class="intro-description">
+                        Welcome to my portfolio! I'm passionate about creating intuitive and user-centered designs 
+                        that solve real-world problems. This portfolio showcases my work on a comprehensive Hospital 
+                        Management System, where I focused on improving healthcare workflows through thoughtful design 
+                        and user experience research.
+                    </p>
+                    <p class="intro-description">
+                        My approach combines user research, iterative design, and usability testing to create 
+                        solutions that are both functional and delightful. I believe in designing with empathy 
+                        and understanding the needs of all stakeholders in the healthcare ecosystem.
+                    </p>
+                    <div class="intro-skills">
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototyping</span>
+                        <span class="skill-tag">Usability Testing</span>
+                        <span class="skill-tag">Information Architecture</span>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <div class="profile-placeholder">
+                        <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="100" cy="100" r="100" fill="#e0e7ff"/>
+                            <circle cx="100" cy="80" r="30" fill="#6366f1"/>
+                            <path d="M40 180 Q40 140 100 140 Q160 140 160 180" fill="#6366f1"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hospital System Section -->
+    <section id="hospital-system" class="hospital-section">
+        <div class="container">
+            <h2 class="section-title">Hospital Management System</h2>
+            <p class="section-description">
+                A comprehensive hospital management system designed to streamline patient care, appointment scheduling, 
+                and medical device management. The system includes features for managing patients, appointments, 
+                devices, and an intelligent alert system for non-functional equipment.
+            </p>
+
+            <!-- Interactive Demo -->
+            <div class="hospital-demo">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <h3>Patient Management</h3>
+                        <div class="input-group">
+                            <input type="text" id="patient-name" placeholder="Patient Name">
+                            <input type="text" id="patient-id" placeholder="Patient ID">
+                            <button class="btn btn-primary" onclick="addPatient()">Add Patient</button>
+                        </div>
+                        <div id="patients-list" class="data-list"></div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Appointment Management</h3>
+                        <div class="input-group">
+                            <input type="text" id="appointment-patient" placeholder="Patient ID">
+                            <input type="datetime-local" id="appointment-date">
+                            <input type="text" id="appointment-doctor" placeholder="Doctor Name">
+                            <button class="btn btn-primary" onclick="addAppointment()">Add Appointment</button>
+                        </div>
+                        <div id="appointments-list" class="data-list"></div>
+                    </div>
+
+                    <div class="control-group">
+                        <h3>Device Management</h3>
+                        <div class="input-group">
+                            <input type="text" id="device-name" placeholder="Device Name">
+                            <input type="text" id="device-id" placeholder="Device ID">
+                            <select id="device-status">
+                                <option value="functional">Functional</option>
+                                <option value="non-functional">Non-Functional</option>
+                            </select>
+                            <button class="btn btn-primary" onclick="addDevice()">Add Device</button>
+                        </div>
+                        <div id="devices-list" class="data-list"></div>
+                    </div>
+                </div>
+
+                <!-- Alert System -->
+                <div class="alert-system">
+                    <h3>Alert System</h3>
+                    <div id="alerts-container" class="alerts-container">
+                        <p class="no-alerts">No alerts at the moment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Features Overview -->
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h4>Patient Management</h4>
+                    <p>Add, view, and manage patient records efficiently</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📅</div>
+                    <h4>Appointment Scheduling</h4>
+                    <p>Schedule and track appointments with doctors</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔧</div>
+                    <h4>Device Management</h4>
+                    <p>Track medical devices and their operational status</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚠️</div>
+                    <h4>Alert System</h4>
+                    <p>Real-time alerts for non-functional devices</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Personas Section -->
+    <section id="personas" class="personas-section">
+      <div class="container">
+        <h2 class="section-title">User Personas</h2>
+        <div class="personas-grid">
+          <div class="persona-card">
+            <div class="persona-image">
+              <img src="images/User persona1.png" alt="User Persona 1" style="width: 80%; height: auto;">
+            </div>
+          </div>
+          <div class="persona-card">
+            <div class="persona-image">
+              <img src="images/User persona2.png" alt="User Persona 2" style="width: 80%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Heuristic Evaluation Section -->
+    <section id="heuristic" class="heuristic-section">
+        <div class="container">
+            <h2 class="section-title">Heuristic Evaluation Report</h2>
+            <p class="section-description">
+                A comprehensive evaluation of the hospital management system based on Nielsen's 10 Usability Heuristics.
+            </p>
+            <div class="heuristic-content">
+                <div class="heuristic-report">
+                    <div class="report-card">
+                        <h4>1. Visibility of System Status</h4>
+                        <p>The system provides clear feedback for all user actions, with status indicators for devices and real-time alerts.</p>
+                        <span class="severity high">High Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>2. Match Between System and Real World</h4>
+                        <p>Medical terminology and workflows align with hospital staff's actual work processes.</p>
+                        <span class="severity medium">Medium Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>3. User Control and Freedom</h4>
+                        <p>Users can easily add, edit, and remove patients, appointments, and devices with clear undo options.</p>
+                        <span class="severity high">High Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>4. Consistency and Standards</h4>
+                        <p>Consistent design patterns throughout the interface ensure predictable user experience.</p>
+                        <span class="severity medium">Medium Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>5. Error Prevention</h4>
+                        <p>Input validation and confirmation dialogs prevent critical errors in patient and appointment management.</p>
+                        <span class="severity high">High Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>6. Recognition Rather Than Recall</h4>
+                        <p>Clear labels and visual cues help users understand functionality without memorization.</p>
+                        <span class="severity low">Low Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>7. Flexibility and Efficiency</h4>
+                        <p>Shortcuts and bulk operations available for power users while maintaining simplicity for beginners.</p>
+                        <span class="severity medium">Medium Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>8. Aesthetic and Minimalist Design</h4>
+                        <p>Clean interface focuses on essential information, reducing cognitive load.</p>
+                        <span class="severity low">Low Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>9. Help Users Recognize, Diagnose, and Recover from Errors</h4>
+                        <p>Clear error messages with actionable solutions guide users when issues occur.</p>
+                        <span class="severity high">High Priority</span>
+                    </div>
+                    <div class="report-card">
+                        <h4>10. Help and Documentation</h4>
+                        <p>Contextual help and tooltips available throughout the system for guidance.</p>
+                        <span class="severity low">Low Priority</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Low Fidelity Wireframe Section -->
+    <section id="low-fidelity" class="low-fidelity-wireframe">
+      <div class="container">
+        <h2 class="section-title">Low Fidelity Wireframe</h2>
+
+        <!-- Buttons for Information Architecture and Empathy Mapping -->
+        <div class="redirect-buttons">
+          <a href="information_architecture.html" class="btn btn-info">Information Architecture</a>
+          <a href="empathy_mapping.html" class="btn btn-empathy">Empathy Mapping</a>
+        </div>
+
+        <div class="wireframe-gallery">
+          <img src="images/login.png" alt="Login Wireframe">
+          <img src="images/Register.png" alt="Register Wireframe">
+          <img src="images/DashBoard.png" alt="Dashboard Wireframe">
+          <img src="images/Contact Us.png" alt="Contact Us Wireframe">
+        </div>
+      </div>
+    </section>
+
+    <!-- High Fidelity Wireframe Section -->
+    <section id="high-fidelity" class="wireframe-section high-fidelity">
+        <div class="container">
+            <h2 class="section-title">High Fidelity Wireframes</h2>
+            <p class="section-description">
+                Refined wireframes with detailed UI elements, typography, colors, and interactions.
+            </p>
+            <div class="wireframe-grid">
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Patient.png" alt="Patient Dashboard" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/DashBoard1.png" alt="Appointment Interface" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Device .png" alt="Device Status Monitor" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Patient.png" alt="Alert Management" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Appointments.png" alt="Alert Management" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Add Device.png" alt="Alert Management" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Add Patient.png" alt="Alert Management" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                <div class="wireframe-item">
+                    <div class="wireframe-placeholder high-fid">
+                        <img src="images/Add Appointments.png" alt="Alert Management" style="width: 100%; height: 100%; object-fit: contain;">
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 UI/UX Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
